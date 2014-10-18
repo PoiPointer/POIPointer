@@ -19,7 +19,7 @@
 */
 - (id)initWithName:(NSString* )name andIllu:(NSString*)illu andDistance:(NSString*)distance andCoord:(CLLocation*)coordinate{
 
-    if (self = [super initWithFrame:CGRectMake(0, 0, 500, 600)] ){
+    if (self = [super initWithFrame:CGRectMake(10, 20, 355, 450)] ){
         
         self.backgroundColor=[UIColor lightGrayColor];
         
@@ -31,10 +31,10 @@
         [_POIIllu setImage:illuForPOI];
         [self addSubview:_POIIllu];
         
-        _POIName = [[UILabel alloc]initWithFrame:CGRectMake(30,400,300,70)];
+        _POIName = [[UILabel alloc]initWithFrame:CGRectMake(30,350,300,70)];
         [_POIName setText:name];
         [self addSubview:_POIName];
-        _POIDistance = [[UILabel alloc]initWithFrame:CGRectMake(30,460,300,40)];
+        _POIDistance = [[UILabel alloc]initWithFrame:CGRectMake(30,400,300,40)];
         [_POIDistance setText:distance];
         [self addSubview:_POIDistance];
         //self.userInteractionEnabled = YES;
