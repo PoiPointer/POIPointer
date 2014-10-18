@@ -82,14 +82,11 @@
             [_POIArray addObject:newSheet];
         }
     }
-    else {
-        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"OOPS..." message:@"It seems no place on our database is open around you.\nSorry we cannot help you!"  delegate:nil cancelButtonTitle:@"Oh well... too bad!" otherButtonTitles:nil];
-        [alert show];
-    }
+    
     // Ready to notify delegate that data is ready and pass back items
     if (self.delegate)
     {
-        [self.delegate itemsDownloaded:_endroits];
+        [self.delegate POIDownloaded:_POIArray];
     }
 }
 

@@ -7,12 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-@protocol HomeModelProtocol <NSObject>{
-    
-}
-
+@protocol POIDownloadProtocol <NSObject>
 - (void)POIDownloaded:(NSArray *)items;
-
 @end
 
 @interface POIDowloader : NSObject<NSURLConnectionDataDelegate>

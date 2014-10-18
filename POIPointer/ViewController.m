@@ -10,11 +10,12 @@
 #import "POIObject.h"
 #import "POISheet.h"
 #import "MapViewController.h"
-#import <CoreLocation/CoreLocation.h>
 
 @interface ViewController () {
+    NSArray *downloadedPOISheet;
     POISheet *sheetToPass;
-    CLLocationCoordinate2D coordinate;
+    CLLocation *coordinate;
+    CLLocationCoordinate2D pointOfOrigin;
     CLLocationManager *locationManager;
 }
 
@@ -29,17 +30,18 @@
     locationManager.distanceFilter = kCLDistanceFilterNone;
     [locationManager startUpdatingLocation];
     [locationManager stopUpdatingLocation];
-    CLLocation *location = [locationManager location];
+    coordinate =[locationManager location];
+    pointOfOrigin = coordinate.coordinate;
     // Configure the new event with information from the location
-    _origin = [NSString stringWithFormat:@"%@",location];
+    _origin = [NSString stringWithFormat:@"%@",coordinate];
     
-    POISheet *sheet1 = [[POISheet alloc]initWithName:@"Place1" andIllu:@"http://static.skynetblogs.be/media/73240/dyn001_original_567_425_pjpeg_31965_fa1f0d8d08f3364d1635cdd452e7423a.jpg" andDistance:@"500m"];
-    [self.viewSlider addSubview:sheet1];
-    POISheet *sheet2 = [[POISheet alloc]initWithName:@"Place2" andIllu:@"http://tempora-expo.be/img/p/37-412-thickbox.jpg" andDistance:@"20m"];
-    [self.viewSlider addSubview:sheet2];
+    //POISheet *sheet1 = [[POISheet alloc]initWithName:@"Place1" andIllu:@"http://static.skynetblogs.be/media/73240/dyn001_original_567_425_pjpeg_31965_fa1f0d8d08f3364d1635cdd452e7423a.jpg" andDistance:@"500m"];
+    //[self.viewSlider addSubview:sheet1];
+    
     //[self.POIIllu setImage:illuForPOI];
     //[self.POIName setText:testPlace.name];
     //[self.POIDistance setText:testPlace.distanceFromCurrentLocation];
+    POIDowloader *loader = [[POIDowloader alloc]initWithOrigin:_origin];
     
     
         
@@ -62,10 +64,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+// This delegate method will get called when the items are finished downloading and create pins for each one
+-(void)POIDownloaded:(NSArray *)items{
+    // Set the downloaded items to the array
+    downloadedPOISheet = items;
+    // for each object in the array, I create a pin on the map
+    for (int i=0; i<[downloadedPOISheet count]; i++) {
+        
+        [self.viewSlider addSubview:downloadedPOISheet[i]];
+    }
+    
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier  isEqual: @"toMap"]) {
         sheetToPass =self.viewSlider.subviews [[self.viewSlider.subviews count] - 1];
         MapViewController *mapVC = segue.destinationViewController;
+        mapVC.pointOfOrigin = pointOfOrigin;
         mapVC.selectedPOI = sheetToPass;
         [sheetToPass removeFromSuperview];
         
