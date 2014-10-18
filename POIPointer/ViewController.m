@@ -32,7 +32,8 @@
     [locationManager stopUpdatingLocation];
     coordinate =[locationManager location];
     if (coordinate == nil) {
-        coordinate =[[CLLocation alloc] initWithLatitude:50.7972419 longitude:4.3991661];
+        //coordinate =[[CLLocation alloc] initWithLatitude:50.7972419 longitude:4.3991661];
+        coordinate =[[CLLocation alloc] initWithLatitude:50.846732 longitude:4.352414];
         
     }
     pointOfOrigin = coordinate.coordinate;

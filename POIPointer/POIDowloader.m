@@ -25,7 +25,7 @@
 }
 
 - (void)downloadItems {
-    NSString *URL = [NSString stringWithFormat:@"http://192.168.5.186:8888/poi?origin=%@&range=4km", self.origin];
+    NSString *URL = [NSString stringWithFormat:@"http://192.168.5.186:8888/poi?origin=%@&range=2km", self.origin];
     NSLog(@"URL : %@", URL);
     //Download the json file
     NSURL *jsonFileUrl = [NSURL URLWithString:URL];
