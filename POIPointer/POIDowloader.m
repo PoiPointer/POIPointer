@@ -71,10 +71,12 @@
             NSLog(@"%f",temp);
             // Create a new location object and set its props to JsonElement properties
             //POISheet *newSheet= [[POISheet alloc] init];
-			
+            NSString *dist = [jsonElement objectForKey:@"distance"];
+            NSString *time = [jsonElement objectForKey:@"time"];
+            NSString *distAndTiming =[NSString stringWithFormat:@"%@ ( approx. walk time : %@ )",dist, time];
 			POISheet *newSheet= [[POISheet alloc] initWithName:[jsonElement objectForKey:@"name"]
 													   andIllu:[jsonElement objectForKey:@"img"]
-												   andDistance:[jsonElement objectForKey:@"distance"]
+												   andDistance:distAndTiming
                                                     andCoord:newLoc];
 			
 			

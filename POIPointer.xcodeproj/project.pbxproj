@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E401FFFD19F28B4F00AF6AE4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E401FFFC19F28B4F00AF6AE4 /* MapKit.framework */; };
+		E401FFFF19F2B49700AF6AE4 /* main-button.png in Resources */ = {isa = PBXBuildFile; fileRef = E401FFFE19F2B49700AF6AE4 /* main-button.png */; };
 		E40B4DE919F1854D00E2732E /* POISheet.m in Sources */ = {isa = PBXBuildFile; fileRef = E40B4DE819F1854D00E2732E /* POISheet.m */; };
 		E40B4DEC19F1B28700E2732E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40B4DEB19F1B28700E2732E /* MapViewController.m */; };
 		E4AE095319F2537500874288 /* POIDowloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AE095219F2537500874288 /* POIDowloader.m */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		E401FFFC19F28B4F00AF6AE4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E401FFFE19F2B49700AF6AE4 /* main-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-button.png"; sourceTree = "<group>"; };
 		E40B4DE719F1854D00E2732E /* POISheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POISheet.h; sourceTree = "<group>"; };
 		E40B4DE819F1854D00E2732E /* POISheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POISheet.m; sourceTree = "<group>"; };
 		E40B4DEA19F1B28700E2732E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		E4BC4A6919F15BFF00559253 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E401FFFE19F2B49700AF6AE4 /* main-button.png */,
 				E4BC4A6A19F15BFF00559253 /* Info.plist */,
 				E4BC4A6B19F15BFF00559253 /* main.m */,
 				E4BC4A9219F1630D00559253 /* POIObject.h */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E401FFFF19F2B49700AF6AE4 /* main-button.png in Resources */,
 				E4BC4A7819F15BFF00559253 /* Main.storyboard in Resources */,
 				E4BC4A7D19F15BFF00559253 /* LaunchScreen.xib in Resources */,
 				E4BC4A7A19F15BFF00559253 /* Images.xcassets in Resources */,

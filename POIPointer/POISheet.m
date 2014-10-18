@@ -27,14 +27,14 @@
         NSData *imageData = [[NSData alloc]initWithContentsOfURL:url];
         UIImage *illuForPOI = [[UIImage alloc]initWithData:imageData];
         self.coordinates = coordinate;
-        _POIIllu =[[UIImageView alloc ] initWithFrame:CGRectMake(50, 50, 400, 400)] ;
+        _POIIllu =[[UIImageView alloc ] initWithFrame:CGRectMake(30, 30, 300, 300)] ;
         [_POIIllu setImage:illuForPOI];
         [self addSubview:_POIIllu];
         
-        _POIName = [[UILabel alloc]initWithFrame:CGRectMake(50,470,400,40)];
+        _POIName = [[UILabel alloc]initWithFrame:CGRectMake(30,400,300,70)];
         [_POIName setText:name];
         [self addSubview:_POIName];
-        _POIDistance = [[UILabel alloc]initWithFrame:CGRectMake(50,520,400,40)];
+        _POIDistance = [[UILabel alloc]initWithFrame:CGRectMake(30,460,300,40)];
         [_POIDistance setText:distance];
         [self addSubview:_POIDistance];
         //self.userInteractionEnabled = YES;
