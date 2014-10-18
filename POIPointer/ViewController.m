@@ -34,6 +34,7 @@
     pointOfOrigin = coordinate.coordinate;
     // Configure the new event with information from the location
     _origin = [NSString stringWithFormat:@"%@",coordinate];
+	_origin =@"50.7972419,4.3991661" ;
     
     //POISheet *sheet1 = [[POISheet alloc]initWithName:@"Place1" andIllu:@"http://static.skynetblogs.be/media/73240/dyn001_original_567_425_pjpeg_31965_fa1f0d8d08f3364d1635cdd452e7423a.jpg" andDistance:@"500m"];
     //[self.viewSlider addSubview:sheet1];
@@ -42,7 +43,9 @@
     //[self.POIName setText:testPlace.name];
     //[self.POIDistance setText:testPlace.distanceFromCurrentLocation];
     POIDowloader *loader = [[POIDowloader alloc]initWithOrigin:_origin];
-    
+    //[pois downloadItems] ;
+	//[pois pushSheetsTo:self.viewSlider] ;
+
     
         
     

@@ -17,5 +17,6 @@
 @property NSString *cat;
 
 - (id) initWithOrigin:(NSString*)origin;
+- (void)downloadItems ;
 
 @end

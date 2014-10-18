@@ -24,7 +24,7 @@
 }
 
 - (void)downloadItems {
-        NSString *URL = [NSString stringWithFormat:@"http://192.168.5.186:888/poi?origin=%@&range=500", self.origin];
+        NSString *URL = [NSString stringWithFormat:@"http://192.168.5.186:8888/poi?origin=%@&range=4km", self.origin];
     NSLog(@"URL : %@", URL);
     //Download the json file
     NSURL *jsonFileUrl = [NSURL URLWithString:URL];
@@ -53,17 +53,26 @@
     
     // Parse the JSON that came in
     NSError *error;
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
-    
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
+    NSArray *jsonArray =[json objectForKey:@"features"] ;
     
     // Loop through Json objects, create question objects and add them to our questions array
     if (jsonArray&&jsonArray.count>0){
         for (int i = 0; i < jsonArray.count; i++)
         {
-            NSDictionary *jsonElement = jsonArray[i];
+            NSDictionary *jsonElement = [jsonArray[i] objectForKey:@"properties"];
             
             // Create a new location object and set its props to JsonElement properties
-            POISheet *newSheet= [[POISheet alloc] init];
+            //POISheet *newSheet= [[POISheet alloc] init];
+			
+			POISheet *newSheet= [[POISheet alloc] initWithName:[jsonElement objectForKey:@"name"]
+													   andIllu:[jsonElement objectForKey:@"url"]
+												   andDistance:[jsonElement objectForKey:@"distance"]];
+			
+			
+			
+			
+/*
             newSheet.name  = [[jsonElement valueForKey:@"property"[jsonElement valueForKey:@"name"]] ] ;
             nouveauLieu.nom = [jsonElement[@"nom"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             nouveauLieu.categorie = [jsonElement[@"categorie"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -76,6 +85,7 @@
             nouveauLieu.divers = [jsonElement[@"divers"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             nouveauLieu.heureDeFermeture = [jsonElement[@"heure_fermeture"]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             nouveauLieu.ratingMoyen = [jsonElement[@"moy"] floatValue] ;
+   */
             //NSLog(@"moy : %f", nouveauLieu.ratingMoyen);
             
             // Add this location to the locations array
