@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E40B4DE919F1854D00E2732E /* POISheet.m in Sources */ = {isa = PBXBuildFile; fileRef = E40B4DE819F1854D00E2732E /* POISheet.m */; };
 		E40B4DEC19F1B28700E2732E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40B4DEB19F1B28700E2732E /* MapViewController.m */; };
+		E4AE095319F2537500874288 /* POIDowloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AE095219F2537500874288 /* POIDowloader.m */; };
 		E4BC4A6C19F15BFF00559253 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BC4A6B19F15BFF00559253 /* main.m */; };
 		E4BC4A6F19F15BFF00559253 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BC4A6E19F15BFF00559253 /* AppDelegate.m */; };
 		E4BC4A7219F15BFF00559253 /* POIPointer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4BC4A7019F15BFF00559253 /* POIPointer.xcdatamodeld */; };
@@ -35,6 +36,8 @@
 		E40B4DE819F1854D00E2732E /* POISheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POISheet.m; sourceTree = "<group>"; };
 		E40B4DEA19F1B28700E2732E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		E40B4DEB19F1B28700E2732E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		E4AE095119F2537500874288 /* POIDowloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIDowloader.h; sourceTree = "<group>"; };
+		E4AE095219F2537500874288 /* POIDowloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIDowloader.m; sourceTree = "<group>"; };
 		E4BC4A6619F15BFF00559253 /* POIPointer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POIPointer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BC4A6A19F15BFF00559253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BC4A6B19F15BFF00559253 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				E4BC4A9319F1630D00559253 /* POIObject.m */,
 				E40B4DE719F1854D00E2732E /* POISheet.h */,
 				E40B4DE819F1854D00E2732E /* POISheet.m */,
+				E4AE095119F2537500874288 /* POIDowloader.h */,
+				E4AE095219F2537500874288 /* POIDowloader.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			files = (
 				E4BC4A7219F15BFF00559253 /* POIPointer.xcdatamodeld in Sources */,
 				E4BC4A6F19F15BFF00559253 /* AppDelegate.m in Sources */,
+				E4AE095319F2537500874288 /* POIDowloader.m in Sources */,
 				E4BC4A7519F15BFF00559253 /* ViewController.m in Sources */,
 				E4BC4A6C19F15BFF00559253 /* main.m in Sources */,
 				E40B4DE919F1854D00E2732E /* POISheet.m in Sources */,

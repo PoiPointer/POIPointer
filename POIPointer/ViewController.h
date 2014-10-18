@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *viewSlider;
 @property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeRecognizer;
+@property NSString *origin;
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer;
 
 @end

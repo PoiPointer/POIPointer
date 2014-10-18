@@ -11,6 +11,7 @@
 
 @interface MapViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *test;
 @property POISheet *selectedPOI;
 
 @end

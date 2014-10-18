@@ -18,7 +18,7 @@
 }
 */
 - (POISheet*)initWithName:(NSString* )name andIllu:(NSString*)illu andDistance:(NSString*)distance{
-    self = [super initWithFrame:CGRectMake(0, 0, 500, 600)];
+
     if (self){
         
         self.backgroundColor=[UIColor lightGrayColor];

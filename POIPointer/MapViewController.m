@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.test setText:self.selectedPOI.POIName.text];
 }
 
 - (void)didReceiveMemoryWarning {
