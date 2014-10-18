@@ -66,6 +66,7 @@
         {
             
             CLLocationCoordinate2D destination = p.coordinates.coordinate;
+            
             MKPlacemark *placemark = [[MKPlacemark alloc]initWithCoordinate:destination addressDictionary:nil];
             MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
             

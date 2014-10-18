@@ -62,9 +62,13 @@
         for (int i = 0; i < jsonArray.count; i++)
         {
             NSDictionary *jsonElement = [jsonArray[i] objectForKey:@"properties"];
-            
-            CLLocation *newLoc = [[CLLocation alloc]initWithLatitude:[[jsonElement objectForKey:@"latitude"] doubleValue] longitude:[[jsonElement objectForKey:@"longitude"] doubleValue]];
-            
+            NSDictionary *jsonElement2 = [jsonArray[i] objectForKey:@"geometry"];
+            NSArray *coords = [jsonElement2 objectForKey:@"coordinates"];
+            CLLocation *newLoc =
+            [[CLLocation alloc]initWithLatitude:[coords[1] doubleValue]
+                                      longitude:[coords [0] doubleValue]];
+            double temp =[coords[1] doubleValue];
+            NSLog(@"%f",temp);
             // Create a new location object and set its props to JsonElement properties
             //POISheet *newSheet= [[POISheet alloc] init];
 			
