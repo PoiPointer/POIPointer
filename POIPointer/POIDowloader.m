@@ -8,6 +8,7 @@
 
 #import "POIDowloader.h"
 #import "POISheet.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation POIDowloader {
     NSMutableData *_downloadedData;
@@ -24,7 +25,7 @@
 }
 
 - (void)downloadItems {
-        NSString *URL = [NSString stringWithFormat:@"http://192.168.5.186:8888/poi?origin=%@&range=4km", self.origin];
+    NSString *URL = [NSString stringWithFormat:@"http://192.168.5.186:8888/poi?origin=%@&range=4km", self.origin];
     NSLog(@"URL : %@", URL);
     //Download the json file
     NSURL *jsonFileUrl = [NSURL URLWithString:URL];
@@ -62,12 +63,15 @@
         {
             NSDictionary *jsonElement = [jsonArray[i] objectForKey:@"properties"];
             
+            CLLocation *newLoc = [[CLLocation alloc]initWithLatitude:[[jsonElement objectForKey:@"latitude"] doubleValue] longitude:[[jsonElement objectForKey:@"longitude"] doubleValue]];
+            
             // Create a new location object and set its props to JsonElement properties
             //POISheet *newSheet= [[POISheet alloc] init];
 			
 			POISheet *newSheet= [[POISheet alloc] initWithName:[jsonElement objectForKey:@"name"]
-													   andIllu:[jsonElement objectForKey:@"url"]
-												   andDistance:[jsonElement objectForKey:@"distance"]];
+													   andIllu:[jsonElement objectForKey:@"img"]
+												   andDistance:[jsonElement objectForKey:@"distance"]
+                                                    andCoord:newLoc];
 			
 			
 			

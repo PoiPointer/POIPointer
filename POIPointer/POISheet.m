@@ -17,16 +17,16 @@
     // Drawing code
 }
 */
-- (POISheet*)initWithName:(NSString* )name andIllu:(NSString*)illu andDistance:(NSString*)distance{
+- (id)initWithName:(NSString* )name andIllu:(NSString*)illu andDistance:(NSString*)distance andCoord:(CLLocation*)coordinate{
 
-    if (self){
+    if (self = [super initWithFrame:CGRectMake(0, 0, 500, 600)] ){
         
         self.backgroundColor=[UIColor lightGrayColor];
         
         NSURL *url = [[NSURL alloc]initWithString:illu];
         NSData *imageData = [[NSData alloc]initWithContentsOfURL:url];
         UIImage *illuForPOI = [[UIImage alloc]initWithData:imageData];
-        
+        self.coordinates = coordinate;
         _POIIllu =[[UIImageView alloc ] initWithFrame:CGRectMake(50, 50, 400, 400)] ;
         [_POIIllu setImage:illuForPOI];
         [self addSubview:_POIIllu];
@@ -35,7 +35,7 @@
         [_POIName setText:name];
         [self addSubview:_POIName];
         _POIDistance = [[UILabel alloc]initWithFrame:CGRectMake(50,520,400,40)];
-        [_POIDistance setText:name];
+        [_POIDistance setText:distance];
         [self addSubview:_POIDistance];
         //self.userInteractionEnabled = YES;
         

@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
+
 @protocol POIDownloadProtocol <NSObject>
 - (void)POIDownloaded:(NSArray *)items;
 @end
 
 @interface POIDowloader : NSObject<NSURLConnectionDataDelegate>
+@property (nonatomic, weak) id<POIDownloadProtocol> delegate;
 @property NSString *origin;
 @property NSString *range;
 @property NSString *cat;

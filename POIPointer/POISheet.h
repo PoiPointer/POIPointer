@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CoreLocation/CoreLocation.h>
 @interface POISheet : UIView
 
 @property int width;
@@ -15,12 +15,13 @@
 @property NSString *illURL;
 @property NSString *distance;
 @property NSString *name;
+@property CLLocation *coordinates;
 @property (nonatomic) IBOutlet UILabel *POIName;
 @property (nonatomic) IBOutlet UIImageView *POIIllu;
 
 @property (nonatomic) IBOutlet UILabel *POIDistance;
 
-- (POISheet*)initWithName:(NSString* )name andIllu:(NSString*)illu andDistance:(NSString*)distance;
+- (id)initWithName:(NSString* )name andIllu:(NSString*)illu andDistance:(NSString*)distance andCoord:(CLLocation*)coordinate;
 
 
 @end

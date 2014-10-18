@@ -37,7 +37,6 @@
                     <connections>
                         <action selector="handleSwipe:" destination="vXZ-lx-hvc" id="pDd-4I-04s"/>
                         <outlet property="delegate" destination="vXZ-lx-hvc" id="RIC-dv-llq"/>
-                        <segue destination="OIc-7y-ETd" kind="presentation" identifier="toMap" id="37R-nt-k92"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -54,10 +53,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4It-0j-aqq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Etj-xV-EVo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="592"/>
+                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uw-gX-mw5">
                                 <rect key="frame" x="87" y="193" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -68,6 +66,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="Etj-xV-EVo" id="j3Z-9x-rIw"/>
                         <outlet property="test" destination="3uw-gX-mw5" id="p6Z-KN-I9m"/>
                     </connections>
                 </viewController>
